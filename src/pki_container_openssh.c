@@ -184,7 +184,7 @@ static int pki_private_key_decrypt(ssh_string blob,
             SSH_LOG(SSH_LOG_WARN, "No passphrase provided");
             return SSH_ERROR;
         }
-        rc = auth_fn("Passphrase",
+        rc = auth_fn("Passphrase for private key:",
                      passphrase_buffer,
                      sizeof(passphrase_buffer),
                      0,
@@ -486,7 +486,7 @@ static int pki_private_key_encrypt(ssh_buffer privkey_buffer,
             SSH_LOG(SSH_LOG_WARN, "No passphrase provided");
             return SSH_ERROR;
         }
-        rc = auth_fn("Passphrase",
+        rc = auth_fn("Passphrase for private key:",
                      passphrase_buffer,
                      sizeof(passphrase_buffer),
                      0,
